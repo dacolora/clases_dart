@@ -6,32 +6,32 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(GameWidget(game: Game()));
   WidgetsFlutterBinding.ensureInitialized();
-  Flame.device.setLandscape();
+  //Flame.device.setLandscape();
 }
 
 class Game extends FlameGame {
-  SpriteComponent king = SpriteComponent();
-  SpriteComponent man = SpriteComponent();
+  SpriteComponent mario = SpriteComponent();
+  SpriteComponent luigi = SpriteComponent();
   SpriteComponent background = SpriteComponent();
-  double sizeComponent = 150.0;
-
+  double sizeHeight = 360.0;
+  double sizeWidth = 200.0;
   @override
   Future<void> onLoad() async {
     super.onLoad();
     background
-      ..sprite = await loadSprite('background.jpg')
+      ..sprite = await loadSprite('background.png')
       ..size = size;
 
-    king
-      ..sprite = await loadSprite('king.png')
-      ..size = Vector2(sizeComponent, sizeComponent)
-      ..position = Vector2(20, size.y - sizeComponent);
-    man
-      ..sprite = await loadSprite('man.png')
-      ..size = Vector2(sizeComponent, sizeComponent)
-      ..position = Vector2(250, size.y - sizeComponent);
+    mario
+      ..sprite = await loadSprite('mario.png')
+      ..size = Vector2(sizeWidth, sizeHeight)
+      ..position = Vector2(20, size.y - sizeHeight - 20);
+    luigi
+      ..sprite = await loadSprite('luigi.png')
+      ..size = Vector2(sizeWidth, sizeHeight)
+      ..position = Vector2(220, 20);
     add(background);
-    add(king);
-    add(man);
+    add(mario);
+    add(luigi);
   }
 }
