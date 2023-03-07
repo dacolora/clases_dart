@@ -8,6 +8,7 @@ class AppBarItem extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       flexibleSpace: SizedBox(
         child: Column(
           children: [

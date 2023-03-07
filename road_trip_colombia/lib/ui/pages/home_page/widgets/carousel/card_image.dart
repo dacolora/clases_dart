@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:road_trip_colombia/ui/widgets/carousel/receta.dart';
+import 'package:road_trip_colombia/ui/pages/home_page/widgets/carousel/receta.dart';
 
 import 'mostrar_receta.dart';
 

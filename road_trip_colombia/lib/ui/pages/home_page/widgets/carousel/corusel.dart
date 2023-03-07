@@ -1,7 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:road_trip_colombia/infraestructure/carousel_mock.dart';
 
-import '../widgets.dart';
+import 'card_image.dart';
 
 class Carousel extends StatelessWidget {
   const Carousel({
@@ -14,7 +15,7 @@ class Carousel extends StatelessWidget {
       itemCount: carruselImages.length,
       itemBuilder: (context, index, realIndex) {
         // ignore: unused_local_variable
-        final carruselImage = carruselImages[index];
+
         return CardImages(
           carruselImages: carruselImages[index],
         );
