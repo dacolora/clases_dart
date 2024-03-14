@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "282830947934",
+    "project_id": "travel-colombia-app",
+    "storage_bucket": "travel-colombia-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282830947934:android:9c40dfb6f0c46371da96cf",
+        "android_client_info": {
+          "package_name": "com.dacoloradog.travel_colombia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRY8jOtSdXSQ8f-pzbf0EzA5pxn_-7Uhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282830947934:android:29f6dd91a955c328da96cf",
+        "android_client_info": {
+          "package_name": "com.example.travel_app_colombia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRY8jOtSdXSQ8f-pzbf0EzA5pxn_-7Uhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
