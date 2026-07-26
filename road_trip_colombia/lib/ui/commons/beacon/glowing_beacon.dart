@@ -76,7 +76,7 @@ class _GlowingBeaconState extends State<GlowingBeacon>
   Widget build(BuildContext context) {
     return SizedBox(
       width: widget.size,
-      height: widget.size * 1.9,
+      height: widget.size * 1.3,
       child: AnimatedBuilder(
         animation: Listenable.merge([
           _pulseController,
@@ -90,7 +90,7 @@ class _GlowingBeaconState extends State<GlowingBeacon>
           final flicker = 0.82 + 0.18 * math.sin(flickerPhase * 3.2);
           final breathe = 0.6 + 0.4 * _pulseController.value;
           final shine = (breathe * flicker).clamp(0.0, 1.3);
-          final sway = math.sin(flickerPhase * 1.3) * 0.045;
+          final sway = math.sin(flickerPhase * 1.3) * 0.015;
 
           return CustomPaint(
             painter: _BeaconPainter(
@@ -127,10 +127,12 @@ class _BeaconPainter extends CustomPainter {
     required this.flareProgress,
   });
 
+  static const double _ringSquash = 0.32;
+
   @override
   void paint(Canvas canvas, Size size) {
-    final base = Offset(size.width / 2, size.height * 0.86);
-    final maxRingRadius = size.width * 0.6;
+    final base = Offset(size.width / 2, size.height * 0.8);
+    final maxRingRadius = size.width * 0.62;
     final tipOffset = sway * size.width;
 
     _paintGroundGlow(canvas, base, maxRingRadius);
@@ -144,8 +146,8 @@ class _BeaconPainter extends CustomPainter {
   void _paintGroundGlow(Canvas canvas, Offset center, double maxRadius) {
     final rect = Rect.fromCenter(
       center: center,
-      width: maxRadius * 1.7,
-      height: maxRadius * 1.05,
+      width: maxRadius * 1.8,
+      height: maxRadius * 1.8 * _ringSquash,
     );
     final paint = Paint()
       ..shader = RadialGradient(colors: [
@@ -168,7 +170,7 @@ class _BeaconPainter extends CustomPainter {
       final ringRect = Rect.fromCenter(
         center: center,
         width: radius * 2,
-        height: radius * 0.6,
+        height: radius * 2 * _ringSquash,
       );
 
       final paint = Paint()
